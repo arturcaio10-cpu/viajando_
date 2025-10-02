@@ -149,15 +149,59 @@
     <script>
     const API_KEY_SERPAPI = 'ba1bc69237a5fa34727f63be1a435f0d45dcc93e7e05c9621a14590835e706bf'; 
     const airportMap = {
-        'são paulo': 'GRU',
-        'brasilia': 'BSB',
-        'rio de janeiro': 'GIG',
-        'fortaleza': 'FOR',
-        'recife': 'REC',
-        'belém': 'BEL',
-        'beijing': 'PEK', 
-        'austin': 'AUS',   
-    };
+    'são paulo': 'GRU',      
+    'campinas': 'VCP',        
+    'rio de janeiro': 'GIG',  
+    'rio de janeiro - sdu': 'SDU', 
+    'brasilia': 'BSB',        
+    'salvador': 'SSA',        
+    'fortaleza': 'FOR',       
+    'recife': 'REC',          
+    'porto alegre': 'POA',    
+    'curitiba': 'CWB',        
+    'belo horizonte': 'CNF',  
+    'belém': 'BEL',           
+    'manaus': 'MAO',          
+    'goiania': 'GYN',         
+    'vitoria': 'VIX',         
+    'florianópolis': 'FLN',   
+    'natal': 'NAT',           
+    'maceio': 'MCZ',          
+    'fóz do iguaçu': 'IGU',   
+    'cuiaba': 'CGB',          
+    'nova york': 'JFK',       
+    'los angeles': 'LAX',     
+    'miami': 'MIA',           
+    'orlando': 'MCO',         
+    'atlanta': 'ATL',         
+    'chicago': 'ORD',         
+    'toronto': 'YYZ',         
+    'montreal': 'YUL',        
+    'mexico': 'MEX',          
+    'buenos aires': 'EZE',    
+    'santiago': 'SCL',        
+    'lima': 'LIM',            
+    'bogota': 'BOG',         
+    'lisboa': 'LIS',          
+    'madri': 'MAD',           
+    'paris': 'CDG',           
+    'londres': 'LHR',         
+    'amsterdam': 'AMS',       
+    'frankfurt': 'FRA',       
+    'roma': 'FCO',            
+    'milão': 'MXP',           
+    'dublin': 'DUB',          
+    'moscou': 'SVO',          
+    'istambul': 'IST',        
+    'beijing': 'PEK',         
+    'tokyo': 'HND',           
+    'sydney': 'SYD',          
+    'dubai': 'DXB',           
+    'doha': 'DOH',            
+    'joanesburgo': 'JNB',     
+    'cidade do cabo': 'CPT',  
+    'austin': 'AUS',
+};
     function getIataCode(cidade) {
         return airportMap[cidade.toLowerCase().trim()] || cidade.toUpperCase().trim();
     }
@@ -319,4 +363,5 @@
     loadContent('pagina_inicial.html');
 </script>
 </body>
+
 </html>
