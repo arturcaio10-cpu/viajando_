@@ -1,366 +1,434 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Viajando Pelo Mundo</title>
-    <style>
-        body {
-            background-image: url("fundo.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed; 
-            
-            display: flex;
-            margin: 0; 
-            font-family: Arial, sans-serif;
-            color: white;
-            min-height: 100vh;
-        }
-        .menu-container {
-            width: 15%; 
-            background-color: rgba(0, 0, 0, 0.7); 
-            color: white;
-            padding: 20px;
-            box-sizing: border-box; 
-            text-align: center;
-        }
-        .menu-container img {
-            width: 100%;
-            height: auto;
-            max-width: 150px; 
-        }
-        .menu-container h3 {
-            margin-top: 20px;
-            font-family: "Playfair Display", serif;
-            font-weight: 500;
-        }
-        .menu-container ul {
-            list-style-type: none; 
-            padding: 0;
-        }
-        .menu-container li a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: white;
-            border-bottom: 1px solid #555;
-            transition: background-color 0.3s; 
-            font-family: "Roboto", sans-serif;
-        }
-        .menu-container li a:hover {
-            background-color: #555;
-        }
-        .main-content {
-            width: 85%; 
-            background-color: rgba(0, 0, 0, 0.5); 
-            box-sizing: border-box;
-            padding: 20px;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; 
-            height: 0;
-            overflow: hidden;
-            max-width: 90%; 
-            margin: 20px auto; 
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .responsive-img {
-            max-width: 95%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
-        #main-content form {
-            max-width: 400px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            text-align: center;
-        }
-        #main-content input[type="text"], #main-content input[type="date"] {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box; 
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #main-content button {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s; 
-        }
-        #main-content button:hover {
-            background-color: #0056b3;
-            color: #ffffff; 
-        }
-        #main-content #resultados {
-            margin-top: 30px;
-            text-align: left; 
-            max-width: 600px; 
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #main-content .passagem {
-            border: 1px solid #eee;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            background-color: #fff;
-            color: #363636;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
-        }
-        #main-content .carregando {
-            color: #ffffff;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        #main-content label {
-             color: white; 
-        }
-    </style>
+    <title>Viajando Pelo Mundo</title>
+    <style>
+        body {
+            background-image: url("fundo.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed; 
+            
+            display: flex;
+            margin: 0; 
+            font-family: Arial, sans-serif;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .menu-container {
+            width: 15%; 
+            background-color: rgba(0, 0, 0, 0.7); 
+            color: white;
+            padding: 20px;
+            box-sizing: border-box; 
+            text-align: center;
+        }
+
+        .menu-container img {
+            width: 100%;
+            height: auto;
+            max-width: 150px; 
+        }
+
+        .menu-container h3 {
+            margin-top: 20px;
+            font-family: "Playfair Display", serif;
+            font-weight: 500;
+        }
+
+        .menu-container ul {
+            list-style-type: none; 
+            padding: 0;
+        }
+
+        .menu-container li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid #555;
+            transition: background-color 0.3s; 
+            font-family: "Roboto", sans-serif;
+        }
+
+        .menu-container li a:hover {
+            background-color: #555;
+        }
+        
+        
+        .main-content {
+            width: 85%; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            max-width: 90%; 
+            margin: 20px auto; 
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        
+        .responsive-img {
+            max-width: 95%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        
+        .main-content form {
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        #main-content input[type="text"], #main-content input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #main-content button {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s; 
+        }
+        #main-content button:hover {
+            background-color: #0056b3;
+            color: #ffffff; 
+        }
+        #main-content #resultados {
+            margin-top: 30px;
+            text-align: left; 
+            max-width: 600px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #main-content .passagem {
+            border: 1px solid #eee;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #363636;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+        #main-content .carregando {
+            color: #ffffff;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        #main-content label {
+             color: white; 
+        }
+    </style>
 </head>
 <body>
-    <div class="menu-container">
-        <img src="logo.png" alt="Logo de Viagem">
-        <h3>Viajando Pelo Mundo</h3>
-        <ul>
-            <li><a href="pagina_inicial.html">Início</a></li>
-            <li><a href="melhores_paises.html">Melhores Paises</a></li> 
-            <li><a href="compras.html">Compras de Passagens</a></li>
-            <li><a href="inscricao.html">Inscreva-se</a></li>
-        </ul>
-        <p style="font-size: 12px; margin-top: 50px;"></p> 
-    </div>
-    <div class="main-content" id="main-content">
-    </div>
-    <script>
-    const API_KEY_SERPAPI = 'ba1bc69237a5fa34727f63be1a435f0d45dcc93e7e05c9621a14590835e706bf'; 
-    const airportMap = {
-    'são paulo': 'GRU',      
-    'campinas': 'VCP',        
-    'rio de janeiro': 'GIG',  
-    'rio de janeiro - sdu': 'SDU', 
-    'brasilia': 'BSB',        
-    'salvador': 'SSA',        
-    'fortaleza': 'FOR',       
-    'recife': 'REC',          
-    'porto alegre': 'POA',    
-    'curitiba': 'CWB',        
-    'belo horizonte': 'CNF',  
-    'belém': 'BEL',           
-    'manaus': 'MAO',          
-    'goiania': 'GYN',         
-    'vitoria': 'VIX',         
-    'florianópolis': 'FLN',   
-    'natal': 'NAT',           
-    'maceio': 'MCZ',          
-    'fóz do iguaçu': 'IGU',   
-    'cuiaba': 'CGB',          
-    'nova york': 'JFK',       
-    'los angeles': 'LAX',     
-    'miami': 'MIA',           
-    'orlando': 'MCO',         
-    'atlanta': 'ATL',         
-    'chicago': 'ORD',         
-    'toronto': 'YYZ',         
-    'montreal': 'YUL',        
-    'mexico': 'MEX',          
-    'buenos aires': 'EZE',    
-    'santiago': 'SCL',        
-    'lima': 'LIM',            
-    'bogota': 'BOG',         
-    'lisboa': 'LIS',          
-    'madri': 'MAD',           
-    'paris': 'CDG',           
-    'londres': 'LHR',         
-    'amsterdam': 'AMS',       
-    'frankfurt': 'FRA',       
-    'roma': 'FCO',            
-    'milão': 'MXP',           
-    'dublin': 'DUB',          
-    'moscou': 'SVO',          
-    'istambul': 'IST',        
-    'beijing': 'PEK',         
-    'tokyo': 'HND',           
-    'sydney': 'SYD',          
-    'dubai': 'DXB',           
-    'doha': 'DOH',            
-    'joanesburgo': 'JNB',     
-    'cidade do cabo': 'CPT',  
-    'austin': 'AUS',
-};
-    function getIataCode(cidade) {
-        return airportMap[cidade.toLowerCase().trim()] || cidade.toUpperCase().trim();
-    }
-   async function buscarPassagens(origem, destino, ida, volta) {
-        const PROXY_URL = 'https://corsproxy.io/?'; 
-        const URL_API = 'https://serpapi.com/search.json';
-        const iataOrigem = getIataCode(origem);
-        const iataDestino = getIataCode(destino);
-        const params = new URLSearchParams({
-            engine: "google_flights",
-            departure_id: iataOrigem, 
-            arrival_id: iataDestino, 
-            outbound_date: ida,
-            ...(volta && { return_date: volta }),
-            currency: "BRL",
-            hl: "pt",
-            api_key: API_KEY_SERPAPI 
-        });
-        const finalApiUrl = `${URL_API}?${params.toString()}`;
-        try {
-            const response = await fetch(`${PROXY_URL}${finalApiUrl}`);
-            if (!response.ok) {
-                const errorText = await response.text(); 
-                let errorMessage = `Erro HTTP ${response.status} (${response.statusText}). Detalhes: ${errorText.substring(0, 100)}...`;
-                throw new Error(errorMessage);
-            }
-            const data = await response.json();
-            if (data.error) {
-                 throw new Error(`Erro na API: ${data.error}. IDs usadas: ${iataOrigem} -> ${iataDestino}`);
-            }
-            const passagensSerp = data.best_flights || data.other_flights || []; 
-            const passagensFormatadas = passagensSerp.map(voo => {
-                const primeiroVoo = voo.flights && voo.flights[0];
-                const duracaoMinutos = voo.duration || 0;
-                const nomeCompanhia = voo.operating_airline_name ||
-                                     voo.airline_name || 
-                                     primeiroVoo?.airline?.name || 
-                                     primeiroVoo?.segments?.[0]?.airline?.name || 
-                                     'Companhia Desconhecida';
-                return {
-                    PrecoAdulto: voo.price || 0,
-                    Itinerarios: [{
-                        DuracaoTotal: duracaoMinutos ? 
-                            `${Math.floor(duracaoMinutos / 60)}h ${duracaoMinutos % 60}m` : 
-                            'N/A',
-                        Segmentos: [{
-                            CompanhiaAerea: {
-                                Nome: nomeCompanhia 
-                            }
-                        }]
-                    }]
-                };
-            });
-            return passagensFormatadas; 
-        } catch (error) {
-            console.error('Falha na busca REAL de passagens. Retornando dados de teste.', error);
-            const mockPassagens = [
-                {
-                    PrecoAdulto: 850.50,
-                    Itinerarios: [{
-                        DuracaoTotal: '4h 15m',
-                        Segmentos: [{ CompanhiaAerea: { Nome: 'Voa Teste Azul' } }]
-                    }]
-                },
-                {
-                    PrecoAdulto: 990.00,
-                    Itinerarios: [{
-                        DuracaoTotal: '5h 00m',
-                        Segmentos: [{ CompanhiaAerea: { Nome: 'Teste Rápido GOL' } }]
-                    }]
-                }
-            ];
-            await new Promise(resolve => setTimeout(resolve, 1500)); 
-            return mockPassagens; 
-        }
-    }
-    function initializePassagemSearch() {
-        const form = document.getElementById('form-pesquisa');
+    <div class="menu-container">
+        <img src="logo.png" alt="Logo de Viagem">
+        <h3>Viajando Pelo Mundo</h3>
+        <ul>
+            <li><a href="pagina_inicial.html">Início</a></li>
+            <li><a href="melhores_paises.html">Melhores Paises</a></li> 
+            <li><a href="compras.html">Compras de Passagens</a></li>
+            <li><a href="inscricao.html">Inscreva-se</a></li>
+        </ul>
+        <p style="font-size: 12px; margin-top: 50px;"></p> 
+    </div>
+    
+    <div class="main-content" id="main-content">
+    </div>
 
-        if (form) {
-            form.removeEventListener('submit', handlePassagemSearch); 
-            form.addEventListener('submit', handlePassagemSearch);
-        }
-    }
-    async function handlePassagemSearch(e) {
-        e.preventDefault();
-        const origem = document.getElementById('origem').value;
-        const destino = document.getElementById('destino').value;
-        const ida = document.getElementById('ida').value;
-        const volta = document.getElementById('volta').value;
-        const resultadosDiv = document.getElementById('resultados');
-        const botaoPesquisar = document.getElementById('btn-pesquisar');
-        resultadosDiv.innerHTML = `<p class="carregando">Buscando voos de ${origem} para ${destino}... Aguarde!</p>`;
-        botaoPesquisar.disabled = true;
-        botaoPesquisar.textContent = 'Buscando...';
-        try {
-            const passagens = await buscarPassagens(origem, destino, ida, volta);
-            resultadosDiv.innerHTML = `<h2>Resultados de Voo: ${origem} (${getIataCode(origem)}) para ${destino} (${getIataCode(destino)})</h2>`;
-            if (passagens.length > 0) {
-                passagens.forEach(passagem => {
-                    const precoTotal = passagem.PrecoAdulto || 0;
-                    const taxaTotal = 0;
-                    const primeiroItinerario = passagem.Itinerarios && passagem.Itinerarios[0];
-                    const primeiroSegmento = primeiroItinerario && primeiroItinerario.Segmentos && primeiroItinerario.Segmentos[0];
-                    const companhiaAerea = (primeiroSegmento && primeiroSegmento.CompanhiaAerea && primeiroSegmento.CompanhiaAerea.Nome) || 'N/A';
-                    const duracaoTotal = (primeiroItinerario && primeiroItinerario.DuracaoTotal) || 'N/A';
-                    const precoFormatado = precoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                    resultadosDiv.innerHTML += `
-                        <div class="passagem">
-                            <strong>${companhiaAerea}</strong><br>
-                            Rota: ${origem} (${getIataCode(origem)}) para ${destino} (${getIataCode(destino)})<br>
-                            <span style="color: green; font-weight: bold; font-size: 1.2em;">Preço Final: ${precoFormatado}</span><br>
-                            Duração Estimada: ${duracaoTotal}<br>
-                            ${taxaTotal > 0 ? `<p style="font-size: 12px; margin-top: 5px; color: #777;">* Taxas de R$ ${taxaTotal.toFixed(2)} inclusas.</p>` : ''}
-                        </div>
-                    `;
-                });
-            } else {
-                resultadosDiv.innerHTML += '<p>Não achamos voos para esta rota e data. Tente um voo com conexão ou outra data!</p>';
-            }
-        } catch (error) {
-            resultadosDiv.innerHTML = `<p style="color: red;">Ocorreu um erro. Tente novamente mais tarde. (${error.message})</p>`;
-            console.error('Erro na requisição:', error);
-        } finally {
-            botaoPesquisar.disabled = false;
-            botaoPesquisar.textContent = 'Pesquisar Agora';
-        }
-    }
-    function loadContent(url) {
-        fetch(url)
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('main-content').innerHTML = html;
-                console.log("Conteúdo de " + url + " carregado com sucesso.");
-                if (url === 'compras.html') {
-                    initializePassagemSearch();
-                }
-                const scripts = document.getElementById('main-content').querySelectorAll('script');
-                scripts.forEach(oldScript => {
-                    const newScript = document.createElement('script');
-                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
-                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-                    oldScript.parentNode.removeChild(oldScript);
-                    document.getElementById('main-content').appendChild(newScript);
-                });
-            })
-            .catch(err => {
-                console.error('Falha ao tentar carregar a página:', err);
-                document.getElementById('main-content').innerHTML = '<h2 style="color: red; text-align: center;">Página não encontrada!</h2>';
-            });
-    }
-    document.querySelectorAll('.menu-container a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const url = this.getAttribute('href');
-            loadContent(url);
-        });
-    });
-    loadContent('pagina_inicial.html');
+    <script>
+    
+    const airportMap = {
+        'são paulo': 'GRU',
+        'campinas': 'VCP',
+        'rio de janeiro': 'GIG',
+        'rio de janeiro - sdu': 'SDU',
+        'brasilia': 'BSB',
+        'salvador': 'SSA',
+        'fortaleza': 'FOR',
+        'recife': 'REC',
+        'porto alegre': 'POA',
+        'curitiba': 'CWB',
+        'belo horizonte': 'CNF',
+        'belém': 'BEL',
+        'manaus': 'MAO',
+        'goiania': 'GYN',
+        'vitoria': 'VIX',
+        'florianópolis': 'FLN',
+        'natal': 'NAT',
+        'maceio': 'MCZ',
+        'fóz do iguaçu': 'IGU',
+        'cuiaba': 'CGB',
+        'nova york': 'JFK',
+        'los angeles': 'LAX',
+        'miami': 'MIA',
+        'orlando': 'MCO',
+        'atlanta': 'ATL',
+        'chicago': 'ORD',
+        'toronto': 'YYZ',
+        'montreal': 'YUL',
+        'mexico': 'MEX',
+        'buenos aires': 'EZE',
+        'santiago': 'SCL',
+        'lima': 'LIM',
+        'bogota': 'BOG',
+        'lisboa': 'LIS',
+        'madri': 'MAD',
+        'paris': 'CDG',
+        'londres': 'LHR',
+        'amsterdam': 'AMS',
+        'frankfurt': 'FRA',
+        'roma': 'FCO',
+        'milão': 'MXP',
+        'dublin': 'DUB',
+        'moscou': 'SVO',
+        'istambul': 'IST',
+        'beijing': 'PEK',
+        'tokyo': 'HND',
+        'seul': 'ICN',
+        'sydney': 'SYD',
+        'dubai': 'DXB',
+        'doha': 'DOH',
+        'joanesburgo': 'JNB',
+        'cidade do cabo': 'CPT',
+        'austin': 'AUS',
+    };
+
+    function getIataCode(cidade) {
+        return airportMap[cidade.toLowerCase().trim()] || cidade.toUpperCase().trim();
+    }
+    
+    
+    async function buscarPassagens(origem, destino, ida, volta) {
+        
+        const BACKEND_ENDPOINT = '/api/search-flights'; 
+        
+        const iataOrigem = getIataCode(origem);
+        const iataDestino = getIataCode(destino);
+
+        const isRoundTrip = !!volta;
+        
+        const params = new URLSearchParams({
+            origem: iataOrigem,
+            destino: iataDestino, 
+            data_ida: ida,
+            is_round_trip: isRoundTrip,
+            ...(isRoundTrip && { data_volta: volta }),
+            currency: "BRL",
+            hl: "pt",
+        });
+        
+        const finalApiUrl = `${BACKEND_ENDPOINT}?${params.toString()}`;
+        
+        try {
+            const response = await fetch(finalApiUrl); 
+            
+            if (!response.ok) {
+                const errorText = await response.text(); 
+                let errorMessage = `Erro HTTP ${response.status} (${response.statusText}). Detalhes: ${errorText.substring(0, 100)}...`;
+                throw new Error(errorMessage);
+            }
+            
+            const data = await response.json();
+            
+            if (data.error) {
+                 throw new Error(`Erro na API: ${data.error}. IDs usadas: ${iataOrigem} -> ${iataDestino}`);
+            }
+            
+            const passagensSerp = data.best_flights || data.other_flights || []; 
+            
+            const passagensFormatadas = passagensSerp.map(voo => {
+                const primeiroVoo = voo.flights && voo.flights[0];
+                const duracaoMinutos = voo.duration || 0;
+                
+                const nomeCompanhia = voo.operating_airline_name || 
+                                   voo.airline_name || 
+                                   primeiroVoo?.airline?.name || 
+                                   primeiroVoo?.segments?.[0]?.airline?.name || 
+                                   'Companhia Desconhecida';
+                
+                return {
+                    PrecoAdulto: voo.price || 0,
+                    
+                    Itinerarios: [{
+                        DuracaoTotal: duracaoMinutos ? 
+                            `${Math.floor(duracaoMinutos / 60)}h ${duracaoMinutos % 60}m` : 
+                            'N/A',
+                        Segmentos: [{
+                            CompanhiaAerea: {
+                                Nome: nomeCompanhia 
+                            }
+                        }]
+                    }]
+                };
+            });
+
+            return passagensFormatadas; 
+            
+        } catch (error) {
+            console.error('Falha na busca REAL de passagens. Retornando dados de teste.', error);
+
+            const mockPassagens = [
+                {
+                    PrecoAdulto: 850.50,
+                    Itinerarios: [{
+                        DuracaoTotal: '4h 15m',
+                        Segmentos: [{ CompanhiaAerea: { Nome: 'Voa Teste Azul' } }]
+                    }]
+                },
+                {
+                    PrecoAdulto: 990.00,
+                    Itinerarios: [{
+                        DuracaoTotal: '5h 00m',
+                        Segmentos: [{ CompanhiaAerea: { Nome: 'Teste Rápido GOL' } }]
+                    }]
+                }
+            ];
+            
+            await new Promise(resolve => setTimeout(resolve, 1500)); 
+            
+            return mockPassagens; 
+        }
+    }
+
+
+    function initializePassagemSearch() {
+        const form = document.getElementById('form-pesquisa');
+
+        if (form) {
+            form.removeEventListener('submit', handlePassagemSearch); 
+            form.addEventListener('submit', handlePassagemSearch);
+        }
+    }
+    
+    async function handlePassagemSearch(e) {
+        e.preventDefault(); 
+
+        const origem = document.getElementById('origem').value;
+        const destino = document.getElementById('destino').value;
+        const ida = document.getElementById('ida').value;
+        const volta = document.getElementById('volta').value; 
+        
+        const resultadosDiv = document.getElementById('resultados');
+        const botaoPesquisar = document.getElementById('btn-pesquisar');
+        
+        resultadosDiv.innerHTML = `<p class="carregando">🚀 Buscando voos de ${origem} para ${destino}... Aguarde!</p>`;
+        botaoPesquisar.disabled = true;
+        botaoPesquisar.textContent = 'Buscando...';
+
+        try {
+            const passagens = await buscarPassagens(origem, destino, ida, volta);
+
+            resultadosDiv.innerHTML = `<h2>Resultados de Voo: ${origem} (${getIataCode(origem)}) para ${destino} (${getIataCode(destino)})</h2>`; 
+
+            if (passagens.length > 0) {
+                passagens.forEach(passagem => {
+                    const precoTotal = passagem.PrecoAdulto || 0;
+                    const taxaTotal = 0; 
+                    
+                    const primeiroItinerario = passagem.Itinerarios && passagem.Itinerarios[0];
+                    const primeiroSegmento = primeiroItinerario && primeiroItinerario.Segmentos && primeiroItinerario.Segmentos[0];
+
+                    const companhiaAerea = (primeiroSegmento && primeiroSegmento.CompanhiaAerea && primeiroSegmento.CompanhiaAerea.Nome) || 'N/A';
+                    const duracaoTotal = (primeiroItinerario && primeiroItinerario.DuracaoTotal) || 'N/A';
+                    
+                    const precoFormatado = precoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    
+                    resultadosDiv.innerHTML += `
+                        <div class="passagem">
+                            <strong>${companhiaAerea}</strong><br>
+                            Rota: ${origem} (${getIataCode(origem)}) para ${destino} (${getIataCode(destino)})<br>
+                            <span style="color: green; font-weight: bold; font-size: 1.2em;">Preço Final: ${precoFormatado}</span><br>
+                            Duração Estimada: ${duracaoTotal}<br>
+                            ${taxaTotal > 0 ? `<p style="font-size: 12px; margin-top: 5px; color: #777;">* Taxas de R$ ${taxaTotal.toFixed(2)} inclusas.</p>` : ''}
+                        </div>
+                    `;
+                });
+            } else {
+                resultadosDiv.innerHTML += '<p>Não achamos voos para esta rota e data. Tente um voo com conexão ou outra data!</p>';
+            }
+        } catch (error) {
+            resultadosDiv.innerHTML = `<p style="color: red;">Ocorreu um erro. Tente novamente mais tarde. (${error.message})</p>`;
+            console.error('Erro na requisição:', error);
+        } finally {
+            botaoPesquisar.disabled = false;
+            botaoPesquisar.textContent = 'Pesquisar Agora';
+        }
+    }
+
+
+    function initializePassagemSearch() {
+        const form = document.getElementById('form-pesquisa');
+
+        if (form) {
+            form.removeEventListener('submit', handlePassagemSearch); 
+            form.addEventListener('submit', handlePassagemSearch);
+        }
+    }
+    
+
+    function loadContent(url) {
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('main-content').innerHTML = html;
+                console.log("Conteúdo de " + url + " carregado com sucesso.");
+                
+                if (url === 'compras.html') {
+                    initializePassagemSearch();
+                }
+
+                const scripts = document.getElementById('main-content').querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.removeChild(oldScript);
+                    document.getElementById('main-content').appendChild(newScript);
+                });
+
+            })
+            .catch(err => {
+                console.error('Falha ao tentar carregar a página:', err);
+                document.getElementById('main-content').innerHTML = '<h2 style="color: red; text-align: center;">Página não encontrada!</h2>';
+            });
+    }
+
+    document.querySelectorAll('.menu-container a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = this.getAttribute('href');
+            loadContent(url);
+        });
+    });
+
+    loadContent('pagina_inicial.html');
 </script>
 </body>
 </html>
