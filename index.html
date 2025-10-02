@@ -294,7 +294,7 @@
         const volta = document.getElementById('volta').value;
         const resultadosDiv = document.getElementById('resultados');
         const botaoPesquisar = document.getElementById('btn-pesquisar');
-        resultadosDiv.innerHTML = `<p class="carregando">🚀 Buscando voos de ${origem} para ${destino}... Aguarde!</p>`;
+        resultadosDiv.innerHTML = `<p class="carregando">Buscando voos de ${origem} para ${destino}... Aguarde!</p>`;
         botaoPesquisar.disabled = true;
         botaoPesquisar.textContent = 'Buscando...';
         try {
@@ -363,5 +363,4 @@
     loadContent('pagina_inicial.html');
 </script>
 </body>
-
 </html>
