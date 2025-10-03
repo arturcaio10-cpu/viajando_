@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Viajando Pelo Mundo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url("fundo.jpg");
@@ -75,6 +76,160 @@
             display: block;
             margin: 20px auto;
            
+        }  @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            
+            .menu-container {
+                width: 100%;
+                padding: 15px;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: relative;
+                z-index: 1000;
+            }
+            
+            .menu-container img {
+                max-width: 120px;
+                height: auto;
+            }
+            
+            .menu-container h3 {
+                font-size: 18px;
+                margin-top: 10px;
+            }
+            
+            .menu-container ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+                margin-top: 15px;
+            }
+            
+            .menu-container li {
+                flex: 1;
+                min-width: 120px;
+            }
+            
+            .menu-container li a {
+                padding: 8px 12px;
+                font-size: 14px;
+                text-align: center;
+                border-radius: 5px;
+                border-bottom: none;
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            
+            .menu-container li a:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            
+            .main-content {
+                width: 100%;
+                padding: 15px;
+                min-height: calc(100vh - 200px);
+            }
+            
+            .video-container {
+                max-width: 100%;
+                margin: 15px 0;
+            }
+            
+            .responsive-img {
+                max-width: 100%;
+                margin: 15px 0;
+            }
+            
+            #main-content form {
+                max-width: 100%;
+                margin: 20px 0;
+                padding: 15px;
+            }
+            
+            #main-content input[type="text"], 
+            #main-content input[type="date"] {
+                width: 100%;
+                padding: 12px;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            
+            #main-content button {
+                width: 100%;
+                padding: 15px;
+                font-size: 18px;
+                margin-top: 10px;
+            }
+            
+            #main-content #resultados {
+                max-width: 100%;
+                margin: 20px 0;
+            }
+            
+            #main-content .passagem {
+                padding: 12px;
+                margin-bottom: 12px;
+                font-size: 14px;
+            }
+            
+            #main-content .carregando {
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .menu-container {
+                padding: 10px;
+            }
+            
+            .menu-container img {
+                max-width: 100px;
+            }
+            
+            .menu-container h3 {
+                font-size: 16px;
+            }
+            
+            .menu-container ul {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .menu-container li {
+                min-width: auto;
+            }
+            
+            .menu-container li a {
+                padding: 10px;
+                font-size: 13px;
+            }
+            
+            .main-content {
+                padding: 10px;
+            }
+            
+            #main-content form {
+                padding: 10px;
+            }
+            
+            #main-content input[type="text"], 
+            #main-content input[type="date"] {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            #main-content button {
+                padding: 12px;
+                font-size: 16px;
+            }
+            
+            #main-content .passagem {
+                padding: 10px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -113,4 +268,5 @@
         loadContent('pagina_inicial.html'); 
     </script>
 </body>
+
 </html>
